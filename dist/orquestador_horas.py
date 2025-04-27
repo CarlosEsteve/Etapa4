@@ -106,7 +106,7 @@ def separacion_train_test(mantenimiento_df_1, steps, equipo):
 
 def crear_entrenar_forecaster(datos_train):
     forecaster = ForecasterRecursive(
-        regressor=RandomForestRegressor(random_state=123),
+        regressor=RandomForestRegressor(n_estimators= 100, random_state=123),
         lags=470
     )
     exogs_train = datos_train.drop(columns=['Horas_Operativas'])
